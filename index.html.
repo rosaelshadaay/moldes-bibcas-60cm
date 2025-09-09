@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moldes de Roupas para Bonecas 60cm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-8">
+        <header class="text-center my-8 sm:my-12">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-pink-600 mb-2">Moldes para Bonecas de 60cm</h1>
+            <p class="text-lg sm:text-xl text-gray-600">
+                Explore a nossa coleção de moldes exclusivos para criar as roupas mais lindas e estilosas.
+            </p>
+        </header>
+
+        <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Molde de Vestido de Verão -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+                <div class="relative w-full h-64 sm:h-72">
+                    <img src="https://placehold.co/600x400/FFC0CB/FFF?text=Vestido+de+Verão" alt="Vestido de Verão para Boneca" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 sm:p-6">
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Vestido de Verão</h2>
+                    <p class="text-gray-600 mb-4 text-sm sm:text-base">
+                        Um vestido leve e elegante, perfeito para dias ensolarados. Fácil de costurar, ideal para iniciantes.
+                    </p>
+                    <a href="#" class="w-full inline-block text-center bg-pink-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-pink-600 transition-colors duration-300 download-link" data-molde-url="https://www.exemplo.com/molde_vestido.pdf">
+                        Baixar Molde
+                    </a>
+                </div>
+            </div>
+
+            <!-- Molde de Blusa e Calça -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+                <div class="relative w-full h-64 sm:h-72">
+                    <img src="https://placehold.co/600x400/90EE90/000?text=Blusa+e+Calça" alt="Conjunto de Blusa e Calça" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 sm:p-6">
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Blusa e Calça</h2>
+                    <p class="text-gray-600 mb-4 text-sm sm:text-base">
+                        Um conjunto casual e moderno. Ideal para criar looks versáteis e cheios de estilo.
+                    </p>
+                    <a href="#" class="w-full inline-block text-center bg-pink-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-pink-600 transition-colors duration-300 download-link" data-molde-url="https://www.exemplo.com/molde_blusa_calca.pdf">
+                        Baixar Molde
+                    </a>
+                </div>
+            </div>
+
+            <!-- Molde de Casaco de Inverno -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+                <div class="relative w-full h-64 sm:h-72">
+                    <img src="https://placehold.co/600x400/ADD8E6/000?text=Casaco+de+Inverno" alt="Casaco de Inverno para Boneca" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 sm:p-6">
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Casaco de Inverno</h2>
+                    <p class="text-gray-600 mb-4 text-sm sm:text-base">
+                        Um casaco fofo e quente para os dias mais frios. Perfeito para usar a criatividade com diferentes tecidos.
+                    </p>
+                    <a href="#" class="w-full inline-block text-center bg-pink-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-pink-600 transition-colors duration-300 download-link" data-molde-url="https://www.exemplo.com/molde_casaco.pdf">
+                        Baixar Molde
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <!-- Mensagem de Download -->
+        <div id="download-message" class="fixed bottom-4 right-4 bg-green-500 text-white py-3 px-6 rounded-lg shadow-xl hidden transition-all duration-500 transform translate-x-full">
+            <p class="font-bold">O download foi iniciado!</p>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const downloadLinks = document.querySelectorAll('.download-link');
+            const downloadMessage = document.getElementById('download-message');
+
+            downloadLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede o comportamento padrão do link
+
+                    const url = link.getAttribute('data-molde-url');
+
+                    // Lógica para simular o download
+                    window.open(url, '_blank');
+
+                    // Mostra a mensagem de download por 3 segundos
+                    downloadMessage.classList.remove('hidden', 'translate-x-full');
+                    downloadMessage.classList.add('translate-x-0');
+
+                    setTimeout(() => {
+                        downloadMessage.classList.remove('translate-x-0');
+                        downloadMessage.classList.add('translate-x-full');
+                    }, 3000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
